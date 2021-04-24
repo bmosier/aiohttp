@@ -898,11 +898,11 @@ class ClientSession:
         )
 
     def post(
-        self, url: StrOrURL, *, data: Any = None, **kwargs: Any
+        self, url: StrOrURL, *, allow_redirects: bool = True, data: Any = None, **kwargs: Any
     ) -> "_RequestContextManager":
         """Perform HTTP POST request."""
         return _RequestContextManager(
-            self._request(hdrs.METH_POST, url, data=data, **kwargs)
+            self._request(hdrs.METH_POST, url, allow_redirects=allow_redirects data=data, **kwargs)
         )
 
     def put(
